@@ -1,44 +1,34 @@
 public class Main {
     public static void main(String[] args) {
-        Book book1=new Book("JAVA THE COMPLETE REF","Herbert Schildt","21-3242-432-3213",1);
-        Book book2=new Book("Teach Yourself C","Herbert Schildt","21-2313-232-6788",5);
-        Book book3=new Book("Statistics","Sheldon Ross","333-1232-342-2342",3);
-//        book1.display();
-//        book2.display();
-//        book2.borrow();
-//        book1.return_book();
-//
-//        book1.display();
-//        book2.display();
+        Product p1=new Product("pen",10.0,12);
+        Product p2=new Product("Marker",50.0,10);
 
-        Student student1 = new Student("SAMDANI", 1412, 3);
-        Student student2 = new Student("ADNAN", 1442, 3);
-        Student student3 = new Student("SUKANYA", 1426, 3);
+//        System.out.println("Product name : "+p1.name);
+//        System.out.println("Product price : "+p1.price);
+//        System.out.println("Product quantity : "+p1.quantity);
 
-        Library lib = new Library(10,3);
-        lib.addBook(book1);
-        lib.addBook(book2);
-        lib.addBook(book3);
-        
+        System.out.println("Before update");
+        System.out.println("Product name : "+p1.getName());
+        System.out.println("Product price : "+p1.getPrice());
+        System.out.println("Product quantity : "+p1.getQuantity());
+        System.out.println("Total cost : "+p1.total_price(p1.getPrice(), p1.getQuantity()));
 
-        lib.displayBooks();
-        lib.findBook("Statistics");
-        lib.borrowBook("Statistics", student1);
-        book3.display();
-        lib.returnBook("Statistics", student1);
-        book3.display();
-        lib.borrowBook("Teach Yourself C", student1);
-        lib.borrowBook("Teach Yourself C", student2);
-        lib.displayBooks();
+//        //after setter
+//        p1.setName("Pencil");
+//        p1.setPrice(5.0);
+//        p1.setQuantity(20);
+//        System.out.println("After setter:");
+//        System.out.println("Product name : "+p1.getName());
+//        System.out.println("Product price : "+p1.getPrice());
+//        System.out.println("Product quantity : "+p1.getQuantity());
+//        System.out.println("Total cost : "+p1.total_price(p1.getPrice(), p1.getQuantity()));
 
+        p1.update_product(p2);
+        System.out.println("After update");
+        System.out.println("Product name : "+p1.getName());
+        System.out.println("Product price : "+p1.getPrice());
+        System.out.println("Product quantity : "+p1.getQuantity());
+        System.out.println("Total cost : "+p1.total_price(p1.getPrice(), p1.getQuantity()));
 
-        student1.display();
-        student2.display();
-
-//        book1.display();
-//        book1.return_book();
-//        System.out.println(book1.getNumCopies());
-//        book1.borrow();
-//        System.out.println(book1.getNumCopies());
     }
 }
